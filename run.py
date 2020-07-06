@@ -37,28 +37,30 @@ try:
             for row in data:
 
                 # If date is different, put data in export file
-                if date_from != row[0] and date_to != row[1] and date_from != "00/00/0000":
+                if date_from != row[0] and date_to != row[2] and date_from != "00/00/0000":
                     print "{0} - {1}: {2} - {3} - {4} - {5}".format(date_from, date_to, usage_day, usage_night, prod_day, prod_night)
                     export.write("{0} 23:59;{2};{3};{4};{5}\n".format(date_from, date_to, usage_day, usage_night, prod_day, prod_night))
 
+                print " *** 0:{0} - 1:{1} - 2:{2} - 3:{3} - 4:{4} - 5:{5} - 6:{6} - 7:{7} - 8:{8} - 9:{9}".format(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9])
+
                 # If date is different, reset all parameters
-                if date_from != row[0] and date_to != row[1]:
+                if date_from != row[0] and date_to != row[2]:
                     date_from  = row[0]
-                    date_to    = row[1]
+                    date_to    = row[2]
                     usage_day = "0,000"    
                     usage_night = "0,000"    
                     prod_day = "0,000"    
                     prod_night = "0,000"    
 
                 # Process correct register to variable
-                if row[4] == "Afname Dag" and row[5] != "":
-                    usage_day = row[5]
-                if row[4] == "Afname Nacht" and row[5] != "":
-                    usage_night = row[5]
-                if row[4] == "Injectie Dag" and row[5] != "":
-                    prod_day = row[5]
-                if row[4] == "Injectie Dag" and row[5] != "":
-                    prod_night = row[5]
+                if row[7] == "Afname Dag" and row[8] != "":
+                    usage_day = row[8]
+                if row[7] == "Afname Nacht" and row[8] != "":
+                    usage_night = row[8]
+                if row[7] == "Injectie Dag" and row[8] != "":
+                    prod_day = row[8]
+                if row[7] == "Injectie Dag" and row[8] != "":
+                    prod_night = row[8]
 
 except IndexError as e:
     print "Error: {0}".format(e)
