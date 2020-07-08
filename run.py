@@ -7,10 +7,10 @@ import sys
 
 ##### CONFIG #####
 # This are the names of your meter at EnergieId.be
-energieId_usage_day       = "Elek.Afname.Dag"
-energieId_usage_night     = "Elek.Afname.Nacht"
-energieId_prod_day        = "Elek.Injectie.Dag"
-energieId_prod_night      = "Elek.Injectie.Nacht"
+energieId_usage_day       = "Elektriciteit - Afname Dag"
+energieId_usage_night     = "Elektriciteit - Afname Nacht"
+energieId_prod_day        = "Elektriciteit - Injectie Dag"
+energieId_prod_night      = "Elektriciteit - Injectie Nacht"
 energieId_export_filename = "energieid.csv"
 
 try:
