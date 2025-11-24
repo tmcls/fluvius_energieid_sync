@@ -2,6 +2,7 @@
 ## 1. Download your history csv file from https://mijnverbruik.fluvius.be/verbruikshistoriek
 ## 2. Rename the file to <import.csv>
 ## 3. Run the following command: python run.py
+## 4. The result is a file you can import in EnergyID.
 
 import sys
 
